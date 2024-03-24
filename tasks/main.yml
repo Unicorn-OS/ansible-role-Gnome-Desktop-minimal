@@ -1,0 +1,11 @@
+---
+- name: Install GnomeShell minimal
+  ansible.builtin.apt:
+    pkg:
+      - gdm3
+      - gnome-session
+      - gnome-shell
+      - gnome-terminal
+    update_cache: true
+  notify: Reboot machine
+  become: true
